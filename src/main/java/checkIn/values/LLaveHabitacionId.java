@@ -1,18 +1,11 @@
 package checkIn.values;
 
+import co.com.sofka.domain.generic.Identity;
 import genericos.Id;
 
-public final class LLaveHabitacionId extends Id {
+public final class LLaveHabitacionId extends Identity {
 
-    public LLaveHabitacionId(String value) {
-        super(value);
-    }
 
-    public LLaveHabitacionId() {
-    }
 
-    public static LLaveHabitacionId of(String value) {
-        return new LLaveHabitacionId(value);
-    }
 
 }

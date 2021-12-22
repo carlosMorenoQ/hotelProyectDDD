@@ -1,15 +1,34 @@
 package checkIn.values;
 
-import genericos.Fecha;
+import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Date;
+import java.util.Objects;
 
-public final class FechaLLegada extends Fecha {
+public final class FechaLLegada implements ValueObject<Date> {
 
+    private final Date value;
 
     public FechaLLegada(Date value) {
-        super(value);
+        this.value = Objects.requireNonNull(value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FechaLLegada that = (FechaLLegada) o;
+        return Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+    @Override
+    public Date value() {
+        return value;
+    }
 
 }

@@ -5,11 +5,11 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Objects;
 
-public class Fecha implements Serializable {
+public abstract class Fecha implements Serializable {
 
     private final Date value;
 
-    public Fecha(Date value) {
+    protected Fecha(Date value) {
         this.value = Objects.requireNonNull(value, "La fecha no puede ser null");
         if(value.after(new Date(Instant.now().toEpochMilli()))){
             throw new IllegalArgumentException("No puede colocar una fecha del pasado");
