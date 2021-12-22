@@ -16,4 +16,16 @@ public class LLaveHabitacion extends Entity<LLaveHabitacionId> {
         this.numeroHabitacionEnLLave = Objects.requireNonNull(numeroHabitacionEnLLave);
     }
 
+    public void asignarNumeroHabitacionEnLLave(NumeroHabitacionEnLLave numeroHabitacionEnLLave){
+        this.numeroHabitacionEnLLave = Objects.requireNonNull(numeroHabitacionEnLLave);
+    }
+
+    public void deasignarNumeroHabitacionEnLLave(){
+        this.numeroHabitacionEnLLave = null;
+    }
+
+    public NumeroHabitacionEnLLave numeroHabitacionEnLLave() {
+        return numeroHabitacionEnLLave;
+    }
+
 }

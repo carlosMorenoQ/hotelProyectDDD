@@ -15,7 +15,7 @@ public class CheckInCreado extends DomainEvent {
     private final Recepcionista recepcionista;
 
     public CheckInCreado(FechaLLegada fechaLLegada, ContratoHospedaje contratoHospedaje, Recepcionista recepcionista) {
-        super("checkIn.checkInCreado");
+        super("hotel.checkIn.checkInCreado");
         this.fechaLLegada = fechaLLegada;
         this.contratoHospedaje = contratoHospedaje;
         this.recepcionista = recepcionista;

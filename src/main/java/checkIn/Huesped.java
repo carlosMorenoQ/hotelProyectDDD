@@ -24,5 +24,24 @@ public class Huesped extends Entity<HuespedId> {
         this.numeroHabitacionHuesped = Objects.requireNonNull(numeroHabitacionHuesped);
     }
 
+    public void modificarNumeroHabitacionEnHuesped(NumeroHabitacionHuesped numeroHabitacionHuesped){
+        this.numeroHabitacionHuesped = Objects.requireNonNull(numeroHabitacionHuesped);
+    }
+
+    public NombreHuesped nombreHuesped() {
+        return nombreHuesped;
+    }
+
+    public ApellidoHuesped apellidoHuesped() {
+        return apellidoHuesped;
+    }
+
+    public EdadHuesped edadHuesped() {
+        return edadHuesped;
+    }
+
+    public NumeroHabitacionHuesped numeroHabitacionHuesped() {
+        return numeroHabitacionHuesped;
+    }
 
 }
