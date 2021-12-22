@@ -29,6 +29,11 @@ public class CheckOut extends AggregateEvent<CheckOutId> {
         this.fechaSalida = fechaSalida;
     }
 
+    public CheckOut(CheckOutId checkOutId){
+        super(checkOutId);
+        subscribe(new CheckOutChange(this));
+    }
+
     public void asignarHabitacionParaLimpieza(
             CamareraId camareraId,
             HabitacionParaLimpieza habitacionParaLimpieza) {

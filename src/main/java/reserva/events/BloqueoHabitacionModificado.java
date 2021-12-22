@@ -6,8 +6,8 @@ import reserva.values.IsBloqueada;
 
 public class BloqueoHabitacionModificado extends DomainEvent {
 
-    public final HabitacionId habitacionId;
-    public final IsBloqueada isBloqueada;
+    private final HabitacionId habitacionId;
+    private final IsBloqueada isBloqueada;
 
     public BloqueoHabitacionModificado(
             HabitacionId habitacionId,
