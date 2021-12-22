@@ -3,7 +3,9 @@ package checkIn;
 import checkIn.events.*;
 import checkIn.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -27,6 +29,12 @@ public class CheckIn extends AggregateEvent<CheckInId> {
     private CheckIn(CheckInId checkInId) {
         super(checkInId);
         subscribe(new CheckInChange(this));
+    }
+
+    public static CheckIn from(CheckInId checkInId, List<DomainEvent> events){
+        var checkIn = new CheckIn(checkInId);
+        events.forEach(checkIn::applyEvent);
+        return checkIn;
     }
 
     public void agregarHuesped(

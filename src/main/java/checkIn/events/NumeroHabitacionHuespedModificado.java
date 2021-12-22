@@ -25,4 +25,6 @@ public class NumeroHabitacionHuespedModificado extends DomainEvent {
     public NumeroHabitacionHuesped getNumeroHabitacionHuesped() {
         return numeroHabitacionHuesped;
     }
+
+
 }
