@@ -2,6 +2,7 @@ package checkIn;
 
 import checkIn.events.*;
 import checkIn.values.*;
+import checkOut.values.Recepcionista;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 

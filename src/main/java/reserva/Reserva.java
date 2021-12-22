@@ -1,6 +1,8 @@
 package reserva;
 
+import checkOut.values.FechaSalida;
 import co.com.sofka.domain.generic.AggregateEvent;
+import reserva.events.BloqueoHabitacionModificado;
 import reserva.events.DowngradeRealizado;
 import reserva.events.MedioDePagoModificado;
 import reserva.events.UpgradeRealizado;

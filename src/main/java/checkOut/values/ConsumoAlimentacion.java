@@ -1,23 +1,27 @@
-package reserva.values;
+package checkOut.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.util.Date;
 import java.util.Objects;
 
-public final class FechaSalida implements ValueObject<Date> {
+public class ConsumoAlimentacion implements ValueObject<Double> {
 
-    private final Date value;
+    private final Double value;
 
-    public FechaSalida(Date value) {
-        this.value = Objects.requireNonNull(value,"la fecha no puede ser null");
+    public ConsumoAlimentacion(Double value) {
+        this.value = value;
+    }
+
+    @Override
+    public Double value() {
+        return null;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FechaSalida that = (FechaSalida) o;
+        ConsumoAlimentacion that = (ConsumoAlimentacion) o;
         return Objects.equals(value, that.value);
     }
 
@@ -25,10 +29,4 @@ public final class FechaSalida implements ValueObject<Date> {
     public int hashCode() {
         return Objects.hash(value);
     }
-
-    @Override
-    public Date value() {
-        return value;
-    }
-
 }

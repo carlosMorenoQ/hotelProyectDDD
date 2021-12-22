@@ -1,10 +1,8 @@
 package checkIn.events;
 
-import checkIn.Huesped;
-import checkIn.values.CheckInId;
 import checkIn.values.ContratoHospedaje;
 import checkIn.values.FechaLLegada;
-import checkIn.values.Recepcionista;
+import checkOut.values.Recepcionista;
 import co.com.sofka.domain.generic.DomainEvent;
 
 

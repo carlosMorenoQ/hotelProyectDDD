@@ -2,7 +2,7 @@ package checkIn.comands;
 
 import checkIn.values.ContratoHospedaje;
 import checkIn.values.FechaLLegada;
-import checkIn.values.Recepcionista;
+import checkOut.values.Recepcionista;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearCheckIn extends Command {

@@ -1,4 +1,4 @@
-package reserva;
+package reserva.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import reserva.values.HabitacionId;

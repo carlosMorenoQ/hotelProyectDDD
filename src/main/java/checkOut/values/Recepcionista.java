@@ -1,10 +1,8 @@
-package checkIn.values;
+package checkOut.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.io.Serializable;
 import java.util.Objects;
-import java.util.Properties;
 
 public final class Recepcionista implements ValueObject<Recepcionista.Properties> {
 
