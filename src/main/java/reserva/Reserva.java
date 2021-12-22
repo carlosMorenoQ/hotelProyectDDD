@@ -1,8 +1,13 @@
 package reserva;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import reserva.events.DowngradeRealizado;
+import reserva.events.MedioDePagoModificado;
+import reserva.events.UpgradeRealizado;
 import reserva.values.*;
 
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Reserva extends AggregateEvent<ReservaId> {
@@ -15,6 +20,7 @@ public class Reserva extends AggregateEvent<ReservaId> {
     protected TipoAcomodacion tipoAcomodacion;
 
     public Reserva(
+
             ReservaId reservaId,
             Titular titular,
             FechaLLegada fechaLLegada,
@@ -22,6 +28,7 @@ public class Reserva extends AggregateEvent<ReservaId> {
             CantidadPersonas cantidadPersonas,
             Set<Habitacion> habitaciones,
             TipoAcomodacion tipoAcomodacion) {
+
         super(reservaId);
         this.titular = titular;
         this.fechaLLegada = fechaLLegada;
@@ -31,6 +38,63 @@ public class Reserva extends AggregateEvent<ReservaId> {
         this.tipoAcomodacion = tipoAcomodacion;
     }
 
+    public Reserva(ReservaId reservaId) {
+        super(reservaId);
+        subscribe(new ReservaChange(this));
+    }
+
+    public void realizarUpgrade(
+            HabitacionId habitacionId,
+            TipoAcomodacion tipoAcomodacion) {
+
+        Objects.requireNonNull(habitacionId);
+        Objects.requireNonNull(tipoAcomodacion);
+        appendChange(new UpgradeRealizado(habitacionId, tipoAcomodacion)).apply();
+    }
+
+    public void realizarDowngrade(
+            HabitacionId habitacionId,
+            TipoAcomodacion tipoAcomodacion) {
+
+        Objects.requireNonNull(habitacionId);
+        Objects.requireNonNull(tipoAcomodacion);
+        appendChange(new DowngradeRealizado(habitacionId, tipoAcomodacion)).apply();
+    }
+
+    public void modificarBloqueoHabitacion(
+            HabitacionId habitacionId,
+            IsBloqueada isBloqueada) {
+
+        Objects.requireNonNull(habitacionId);
+        Objects.requireNonNull(isBloqueada);
+
+        appendChange(new BloqueoHabitacionModificado(
+                habitacionId,
+                isBloqueada
+        )).apply();
+    }
+
+    public void modificarMedioDePago(
+            TitularId titularId,
+            MedioDePago medioDePago) {
+
+        Objects.requireNonNull(titularId);
+        Objects.requireNonNull(medioDePago);
+
+        appendChange(new MedioDePagoModificado(
+                titularId,
+                medioDePago
+        )).apply();
+
+    }
+
+
+    public Optional<Habitacion> getHabitacionPorId(HabitacionId habitacionId) {
+        return habitaciones()
+                .stream()
+                .filter(habitacion -> habitacion.identity().equals(habitacionId))
+                .findFirst();
+    }
 
     public Titular titular() {
         return titular;

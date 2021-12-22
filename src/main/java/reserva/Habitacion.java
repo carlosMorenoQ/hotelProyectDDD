@@ -33,6 +33,12 @@ public class Habitacion extends Entity<HabitacionId> {
         this.isBloqueada = Objects.requireNonNull(isBloqueada);
     }
 
+    public void modificarTipoHabitacion(TipoAcomodacion tipoAcomodacion){
+
+        this.tipoAcomodacion = Objects.requireNonNull(tipoAcomodacion);
+
+    }
+
 
     public Ubicacion ubicacion() {
         return ubicacion;
