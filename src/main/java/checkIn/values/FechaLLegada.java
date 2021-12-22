@@ -10,7 +10,7 @@ public final class FechaLLegada implements ValueObject<Date> {
     private final Date value;
 
     public FechaLLegada(Date value) {
-        this.value = Objects.requireNonNull(value);
+        this.value = Objects.requireNonNull(value,"la fecha no puede ser null");
     }
 
     @Override
