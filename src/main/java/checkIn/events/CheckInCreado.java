@@ -5,9 +5,8 @@ import checkIn.values.CheckInId;
 import checkIn.values.ContratoHospedaje;
 import checkIn.values.FechaLLegada;
 import checkIn.values.Recepcionista;
-import genericos.DomainEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 
-import java.util.Set;
 
 public class CheckInCreado extends DomainEvent {
 

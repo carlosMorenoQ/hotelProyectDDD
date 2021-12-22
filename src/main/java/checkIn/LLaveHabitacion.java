@@ -2,7 +2,7 @@ package checkIn;
 
 import checkIn.values.LLaveHabitacionId;
 import checkIn.values.NumeroHabitacionEnLLave;
-import genericos.Entity;
+import co.com.sofka.domain.generic.Entity;
 
 import java.util.Objects;
 

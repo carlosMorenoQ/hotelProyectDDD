@@ -1,7 +1,7 @@
 package checkIn;
 
 import checkIn.values.*;
-import genericos.Entity;
+import co.com.sofka.domain.generic.Entity;
 
 import java.util.Objects;
 

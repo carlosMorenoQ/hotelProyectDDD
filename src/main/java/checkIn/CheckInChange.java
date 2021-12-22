@@ -9,10 +9,10 @@ public class CheckInChange extends EventChange {
     public CheckInChange(CheckIn checkIn){
 
         apply((CheckInCreado event) -> {
-//            checkIn.fechaLLegada = event.getFechaLLegada();
-//            checkIn.contratoHospedaje =event.getContratoHospedaje();
-//            checkIn.recepcionista = event.getRecepcionista();
-//            checkIn.huespedes = new HashSet<Huesped>();
+            checkIn.fechaLLegada = event.getFechaLLegada();
+            checkIn.contratoHospedaje =event.getContratoHospedaje();
+            checkIn.recepcionista = event.getRecepcionista();
+            checkIn.huespedes = new HashSet<Huesped>();
         });
 
 

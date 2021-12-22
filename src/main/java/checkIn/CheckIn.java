@@ -11,12 +11,17 @@ public class CheckIn extends AggregateEvent<CheckInId> {
     protected Set<Huesped> huespedes;
     protected ContratoHospedaje contratoHospedaje;
     protected Recepcionista recepcionista;
-    protected Huesped huesped;
     protected LLaveHabitacion lLaveHabitacion;
 
-
-
-
+    public CheckIn(CheckInId checkInId,
+                   FechaLLegada fechaLLegada,
+                   ContratoHospedaje contratoHospedaje,
+                   Recepcionista recepcionista,
+                   Huesped huesped,
+                   LLaveHabitacion lLaveHabitacion) {
+        super(checkInId);
+        appendChange(new CheckInCreado(fechaLLegada,contratoHospedaje,recepcionista)).apply();
+    }
 
 
 }
